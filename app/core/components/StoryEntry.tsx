@@ -29,8 +29,9 @@ export const StoryEntry: FC<StoryEntryProps> = ({
 
   return (
     <div className={`${Styles.glassPane} ${Styles.fadeIn} ${!hasLoadedImage ?? Styles.isHidden}`}>
-      <div className={Styles.paneCoverImg}>
+      <div className={Styles.paneCoverImgWrapper}>
         <Image
+          className={Styles.paneCoverImg}
           alt="Story cover image"
           width={500}
           height={300}
@@ -38,28 +39,24 @@ export const StoryEntry: FC<StoryEntryProps> = ({
           src={imageUrl}
           onLoadingComplete={() => setHasLoadedImage(true)}
         />
+        <span className={Styles.paneCoverImgScore}>{score}</span>
       </div>
       <div className={Styles.paneHeader}>
-        <h2>{title}</h2>
+        <h1>{title}</h1>
+        <h2>By {authorId}</h2>
       </div>
       <div className={Styles.paneContent}>
         <table>
-          <tr>
-            <td>Published</td>
-            <td>{date.toLocaleString()}</td>
-          </tr>
-          <tr>
-            <td>Score</td>
-            <td>{score}</td>
-          </tr>
-          <tr>
-            <td>Author</td>
-            <td>{authorId}</td>
-          </tr>
-          <tr>
-            <td>Author Karma</td>
-            <td>{authorKarma}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Published</td>
+              <td>{date.toLocaleString()}</td>
+            </tr>
+            <tr>
+              <td>Author Karma</td>
+              <td>{authorKarma}</td>
+            </tr>
+          </tbody>
         </table>
         <div className={Styles.hideIfCanHover}>
           <ButtonLink href={url} variant="block">

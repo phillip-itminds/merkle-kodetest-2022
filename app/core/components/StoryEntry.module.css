@@ -18,10 +18,29 @@
   }
 }
 
-.paneCoverImg {
+.paneCoverImgWrapper {
   overflow: hidden;
   width: 100%;
   border-radius: 16px 16px 0 0;
+}
+
+.paneCoverImg {
+  clip-path: polygon(28% 0%, 0% 40%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.paneCoverImgScore {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .paneCoverImgScore {
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+  }
 }
 
 .paneHeader {
@@ -32,8 +51,22 @@
   border-bottom: 1px solid rgba(250, 217, 217, 0.3);
 }
 
-.paneHeader h2 {
+.paneHeader h1 {
   font-size: 1.2rem;
+}
+
+.paneHeader h2 {
+  font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .paneHeader h1 {
+    font-size: 1.4rem;
+  }
+
+  .paneHeader h2 {
+    font-size: 1rem;
+  }
 }
 
 .paneContent {
