@@ -21,7 +21,6 @@ const Home: BlitzPage = () => {
         ...story,
         authorId: story.by,
         authorKarma: 1234,
-        imageUrl: "/code.jfif",
       })) ?? [],
     [stories]
   )

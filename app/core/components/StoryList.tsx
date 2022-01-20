@@ -18,7 +18,8 @@ export type StoryListProps = {
 }
 
 export const StoryList: FC<StoryListProps> = ({ stories }) => {
-  const sortedStories = useMemo(() => [...stories].sort((sA, sB) => sB.score - sA.score), [stories])
+  // Stories sorted in ascending order by their scores.
+  const sortedStories = useMemo(() => [...stories].sort((sA, sB) => sA.score - sB.score), [stories])
 
   return (
     <div className={Styles.entryList}>
