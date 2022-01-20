@@ -1,0 +1,48 @@
+.pageBackground {
+  position: fixed;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Gradient background */
+  background: rgb(131, 58, 180);
+  background: -moz-linear-gradient(
+    145deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 36%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    145deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 36%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    145deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 36%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fcb045",GradientType=1);
+}
+
+.pageBackgroundTextColor {
+  color: white;
+}
+
+.pageHeading {
+  padding: 2rem;
+  text-align: center;
+}
+
+.pageHeading h1 {
+  font-size: 3rem;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+}

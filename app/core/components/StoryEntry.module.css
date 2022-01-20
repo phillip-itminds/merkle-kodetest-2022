@@ -1,0 +1,78 @@
+.glassPane {
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(250, 217, 217, 0.3);
+
+  /* Transition for hover */
+  transition: 0.1s ease-in-out;
+}
+
+/* Hover effect for the pane */
+@media (hover: hover) {
+  .glassPane:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+}
+
+.paneCoverImg {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+.paneHeader {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid rgba(250, 217, 217, 0.3);
+  border-bottom: 1px solid rgba(250, 217, 217, 0.3);
+}
+
+.paneHeader h2 {
+  font-size: 1.2rem;
+}
+
+.paneContent {
+  padding: 1rem;
+}
+
+.paneContent table {
+  width: 100%;
+}
+
+.paneContent table td {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.paneContent table td:first-of-type {
+  padding-right: 0.5rem;
+}
+
+.paneContent table td:not(:first-of-type) {
+  text-align: right;
+}
+
+.paneContent > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.isHidden {
+  opacity: 0;
+}
+
+/* A class used to display/hide elements based on
+if hover is supported (is not supported on touch devices for instance).*/
+@media (hover: hover) {
+  .hideIfCanHover {
+    display: none;
+  }
+}
