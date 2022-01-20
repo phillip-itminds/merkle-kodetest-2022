@@ -25,7 +25,7 @@ export const StoryEntry: FC<StoryEntryProps> = ({
   authorKarma,
 }) => {
   const [hasLoadedImage, setHasLoadedImage] = useState(false)
-  const date = new Date(time)
+  const date = new Date(time * 1000) // Convert Unix time to date object.
 
   return (
     <div className={`${Styles.glassPane} ${Styles.fadeIn} ${!hasLoadedImage ?? Styles.isHidden}`}>
