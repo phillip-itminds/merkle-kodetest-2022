@@ -6,6 +6,12 @@ Blitz is set up like Nextjs, but comes with some extra bits and bobs, for instan
 Visit the page hosted on Render.com:
 [https://merklekodetest2022.onrender.com/](https://merklekodetest2022.onrender.com/)
 
+## Responsiveness
+
+The site is responsive, but it also takes into account touch devices.
+On touch devices, the hover effect is not present and therefore there is a button
+on each story (that has a link) to indicate that it can be clicked and followed.
+
 # **Blitz.js**
 
 ## Getting Started
