@@ -28,7 +28,11 @@ export const StoryEntry: FC<StoryEntryProps> = ({
   const date = new Date(time * 1000) // Convert Unix time to date object.
 
   return (
-    <div className={`${Styles.glassPane} ${Styles.fadeIn} ${!hasLoadedImage ?? Styles.isHidden}`}>
+    <div
+      className={`${Styles.glassPane} ${url ? "" : Styles.noLink} ${Styles.fadeIn} ${
+        !hasLoadedImage ?? Styles.isHidden
+      }`}
+    >
       <div className={Styles.paneCoverImgWrapper}>
         <Image
           className={Styles.paneCoverImg}
@@ -58,11 +62,13 @@ export const StoryEntry: FC<StoryEntryProps> = ({
             </tr>
           </tbody>
         </table>
-        <div className={Styles.hideIfCanHover}>
-          <ButtonLink href={url} variant="block">
-            Go to story
-          </ButtonLink>
-        </div>
+        {url && (
+          <div className={Styles.hideIfCanHover}>
+            <ButtonLink href={url} variant="block">
+              Go to story
+            </ButtonLink>
+          </div>
+        )}
       </div>
     </div>
   )

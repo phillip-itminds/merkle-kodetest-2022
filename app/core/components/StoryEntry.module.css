@@ -12,7 +12,7 @@
 
 /* Hover effect for the pane */
 @media (hover: hover) {
-  .glassPane:hover {
+  .glassPane:not(.noLink):hover {
     transform: translateY(-10px);
     cursor: pointer;
   }

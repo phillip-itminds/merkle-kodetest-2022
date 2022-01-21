@@ -13,7 +13,7 @@ export type NonTouchLinkProps = {
 export const NonTouchLink: FC<NonTouchLinkProps> = ({ children, url }) => {
   const isTouchDevice = window.matchMedia("(hover: none)").matches
 
-  return isTouchDevice ? (
+  return isTouchDevice || !url ? (
     <>{children}</>
   ) : (
     <a className={Styles.link} href={url}>
