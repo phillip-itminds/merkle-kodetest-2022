@@ -1,4 +1,6 @@
 .glassPane {
+  height: 100%; /* Fill height in flex box. */
+
   /* Glassmorphism effect */
   background: rgba(255, 255, 255, 0.24);
   border-radius: 16px;

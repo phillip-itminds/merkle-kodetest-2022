@@ -13,6 +13,10 @@
   animation-delay: calc(var(--stagger-order) * 75ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
+
+  /* Add blur effect here as well, as it seems like this effect doesn't work */
+  /* on the entry itself (at least not with the current structure). */
+  backdrop-filter: blur(10px);
 }
 
 @media only screen and (min-width: 768px) {
