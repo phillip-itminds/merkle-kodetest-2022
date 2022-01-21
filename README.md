@@ -3,6 +3,8 @@
 For this app, I tried using Blitzjs, which I haven't tried before.
 Blitz is set up like Nextjs, but comes with some extra bits and bobs, for instance in conjunction with databases.
 
+# **Blitz.js**
+
 ## Getting Started
 
 Run your app in the development mode.
