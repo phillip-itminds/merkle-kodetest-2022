@@ -3,6 +3,9 @@
 For this app, I tried using Blitzjs, which I haven't tried before.
 Blitz is set up like Nextjs, but comes with some extra bits and bobs, for instance in conjunction with databases.
 
+Visit the page hosted on Render.com:
+[https://merklekodetest2022.onrender.com/](https://merklekodetest2022.onrender.com/)
+
 # **Blitz.js**
 
 ## Getting Started
