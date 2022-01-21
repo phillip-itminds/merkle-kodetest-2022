@@ -2,13 +2,18 @@ import { getImageUrl } from "app/utils/staticImgUtils"
 import { resolver } from "blitz"
 
 interface GetRandomTopStoriesInput {}
+
+export interface Author {
+  id: string
+  karma: number
+}
 export interface Story {
   id: number
   url: string
   title: string
   time: number
   score: number
-  by: string // Author ID.
+  by: Author
   imageUrl: string
 }
 
@@ -31,8 +36,19 @@ export default resolver.pipe(async ({}: GetRandomTopStoriesInput): Promise<Story
         ...story,
         imageUrl: getImageUrl(),
       }))
+      .then((story) =>
+        // The story.by is still the author ID. We exchange it here for the author object.
+        fetch(`https://hacker-news.firebaseio.com/v0/user/${story.by}.json`)
+          .then((res) => res.json())
+          .then((author) => ({
+            ...story,
+            by: {
+              id: author.id,
+              karma: author.karma,
+            },
+          }))
+      )
   )
-  const stories = (await Promise.all(storyPromises)) as Story[]
 
-  return stories
+  return (await Promise.all(storyPromises)) as Story[]
 })

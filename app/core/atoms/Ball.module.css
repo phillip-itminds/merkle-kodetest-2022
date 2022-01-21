@@ -1,0 +1,20 @@
+.ball {
+  position: absolute;
+  left: var(--pos-x);
+  top: var(--pos-y);
+
+  /* Default size */
+  width: 150px;
+  height: 150px;
+
+  border-radius: 100%;
+
+  background: rgb(103, 51, 166);
+  background: linear-gradient(
+    180deg,
+    rgba(103, 51, 166, 1) 0%,
+    rgba(203, 67, 175, 1) 70%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.3);
+}

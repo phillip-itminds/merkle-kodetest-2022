@@ -1,9 +1,11 @@
+import { Ball } from "app/core/atoms/Ball"
 import { CenteredLoader } from "app/core/components/CenteredLoader"
 import { ErrorFallback } from "app/core/components/ErrorFallback"
 import { StoryList } from "app/core/components/StoryList"
 import getRandomTopStories from "app/stories/queries/getRandomTopStories"
+import { getRandomInt } from "app/utils/rngUtils"
 import { BlitzPage, ErrorBoundary, useQuery } from "blitz"
-import { Suspense, useMemo } from "react"
+import { CSSProperties, Suspense, useMemo } from "react"
 
 import Styles from "./index.module.css"
 
@@ -19,15 +21,22 @@ const Home: BlitzPage = () => {
     () =>
       stories?.map((story) => ({
         ...story,
-        authorId: story.by,
-        authorKarma: 1234,
+        authorId: story.by.id,
+        authorKarma: story.by.karma,
       })) ?? [],
     [stories]
   )
 
+  const ballCount = getRandomInt(3, 8)
+
   return (
     <>
-      <div className={Styles.pageBackground} />
+      <div className={Styles.pageBackground}>
+        {/* Add a random number of spheres to the background. */}
+        {[...Array(ballCount)].map((_, idx) => (
+          <Ball key={idx} />
+        ))}
+      </div>
       <div className={Styles.pageBackgroundTextColor}>
         <main>
           <div className={Styles.pageHeading}>

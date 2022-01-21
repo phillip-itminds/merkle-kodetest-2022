@@ -27,6 +27,7 @@ export const StoryList: FC<StoryListProps> = ({ stories }) => {
         <div
           key={story.id}
           className={Styles.entryWrapper}
+          // Staggering could be implemented as a wrapper component to make it reusable.
           style={{ "--stagger-order": idx + 1 } as CSSProperties}
         >
           <NonTouchLink url={story.url}>
